@@ -1,3 +1,4 @@
+import { HomeServiceService } from './../home-service.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./student-list.component.css']
 })
 export class StudentListComponent implements OnInit {
+  student;
+  selectedStudents;
 
-  constructor() { }
+  constructor(public homeService: HomeServiceService) { }
 
   ngOnInit(): void {
+  }
+  public selectStudent(student){
+    this.selectedStudent = student;
   }
 
 }
